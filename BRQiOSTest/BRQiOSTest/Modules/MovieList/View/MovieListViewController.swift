@@ -23,7 +23,11 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupTableView()
+        
         self.initViewModel()
+        self.viewModel.fetchMovies(with: "Thor")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,6 +42,11 @@ class MovieListViewController: UIViewController {
             }
         }
     }
+    
+    func setupTableView() {
+        self.moviesTableView.delegate = self
+        self.moviesTableView.dataSource = self
+    }
 }
 
 extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -47,10 +56,17 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.viewModel.numberOfCells
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell else {
+            fatalError("Cell does not exists")
+        }
+        
+        let movie = self.viewModel.getMovie(at: indexPath)
+        cell.titleLabel.text = movie.title
+        
+        return cell
     }
 }

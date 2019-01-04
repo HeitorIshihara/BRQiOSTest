@@ -11,7 +11,11 @@ import Foundation
 class MovieListViewModel {
     // MARK: - Properties
     let apiManager: APIManager
-
+    var movies: [Movie] = [Movie]()
+    var numberOfCells: Int {
+        return self.movies.count
+    }
+    
     // MARK: - Closure Bindings
     var reloadTableViewClosure: (()->())?
     
@@ -21,5 +25,17 @@ class MovieListViewModel {
     }
     
     // MARK: - Functions
+    func fetchMovies(with title: String) {
+        self.apiManager.fetchMovies(with: title) { (status, movies) in
+            DispatchQueue.main.async {
+                self.movies = movies
+                self.reloadTableViewClosure?()
+            }
+        }
+    }
+    
+    func getMovie(at indexPath: IndexPath) -> Movie{
+        return self.movies[indexPath.row]
+    }
     
 }
