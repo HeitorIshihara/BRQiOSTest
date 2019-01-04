@@ -23,11 +23,10 @@ class MovieListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setupSearchBar()
         self.setupTableView()
         
         self.initViewModel()
-        self.viewModel.fetchMovies(with: "Thor")
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +40,10 @@ class MovieListViewController: UIViewController {
                 self.moviesTableView.reloadData()
             }
         }
+    }
+    
+    func setupSearchBar() {
+        self.searchBar.delegate = self
     }
     
     func setupTableView() {
@@ -68,5 +71,12 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
         cell.titleLabel.text = movie.title
         
         return cell
+    }
+}
+
+extension MovieListViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text else { return }
+        self.viewModel.fetchMovies(with: text)
     }
 }
