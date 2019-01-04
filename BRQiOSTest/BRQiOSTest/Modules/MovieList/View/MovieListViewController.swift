@@ -77,6 +77,9 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
 extension MovieListViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text else { return }
-        self.viewModel.fetchMovies(with: text)
+        if !text.isEmpty {
+            self.viewModel.fetchMovies(with: text)
+            self.searchBar.resignFirstResponder()
+        }
     }
 }
