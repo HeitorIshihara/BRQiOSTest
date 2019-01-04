@@ -49,6 +49,7 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="titleLabel" destination="dHn-Y1-0sV" id="OeZ-X9-OIE"/>
+                                            <segue destination="p5F-Bq-6SS" kind="show" id="i6H-bv-384"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -84,6 +85,21 @@
                 </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="676" y="251.42428785607197"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0mh-Fc-ull">
+            <objects>
+                <viewController id="p5F-Bq-6SS" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WLj-XS-ape">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="ALQ-VH-43Y"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F13-08-huE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1449" y="251"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="04Y-ob-2n3">

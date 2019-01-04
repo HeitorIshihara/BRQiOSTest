@@ -21,6 +21,7 @@ class APIManager {
                     
                     let decoder = JSONDecoder()
                     
+                    // Thats necessary because the api returns code 200 even if it fails
                     do {
                         let apiResponse = try decoder.decode(MovieAPIResponse.self, from: data)
                         complete(true, apiResponse.movies)
