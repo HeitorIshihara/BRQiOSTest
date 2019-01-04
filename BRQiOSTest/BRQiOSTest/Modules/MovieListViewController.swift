@@ -9,12 +9,37 @@
 import UIKit
 
 class MovieListViewController: UIViewController {
+    
+    //MARK: - Outlets and IBActions
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var moviesTableView: UITableView!
+    
+    //MARK: - Properties
+    
 
+    //MARK: - Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    //MARK: - Functions
+}
+
+extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }

@@ -1,11 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kf9-py-l4A">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <scenes/>
+    <scenes>
+        <!--Movies-->
+        <scene sceneID="Y0a-nh-OGD">
+            <objects>
+                <viewController id="cYC-U3-GhE" customClass="MovieListViewController" customModule="BRQiOSTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aNH-7H-gTe">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QmE-lT-TiA">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5El-2o-G7I">
+                                <rect key="frame" x="0.0" y="120" width="375" height="547"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="yzi-Q4-LJn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Movies" id="IYe-w0-lqP"/>
+                    <connections>
+                        <outlet property="moviesTableView" destination="5El-2o-G7I" id="EVE-IL-Qp4"/>
+                        <outlet property="searchBar" destination="QmE-lT-TiA" id="bUE-QC-YE9"/>
+                        <outlet property="searchDisplayController" destination="K3D-tq-v1G" id="TZF-2T-X9R"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SiW-Wd-vFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="K3D-tq-v1G">
+                    <connections>
+                        <outlet property="delegate" destination="cYC-U3-GhE" id="S4g-S2-ahb"/>
+                        <outlet property="searchContentsController" destination="cYC-U3-GhE" id="EzY-zr-gr7"/>
+                        <outlet property="searchResultsDataSource" destination="cYC-U3-GhE" id="rxJ-aw-Sr8"/>
+                        <outlet property="searchResultsDelegate" destination="cYC-U3-GhE" id="fh8-Hd-xIh"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="676" y="251.42428785607197"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="04Y-ob-2n3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kf9-py-l4A" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zOL-3c-l0V">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cYC-U3-GhE" kind="relationship" relationship="rootViewController" id="vGm-Ni-Zzq"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FAj-BD-UBj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-263.19999999999999" y="251.42428785607197"/>
+        </scene>
+    </scenes>
 </document>
