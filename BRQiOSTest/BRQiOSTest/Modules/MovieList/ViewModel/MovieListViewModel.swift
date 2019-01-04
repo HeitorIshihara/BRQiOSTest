@@ -17,7 +17,8 @@ class MovieListViewModel {
     }
     
     // MARK: - Closure Bindings
-    var reloadTableViewClosure: (()->())?
+    var reloadTableViewClosure: (() -> ())?
+    var showErrorAlert: (() -> ())?
     
     // MARK: - Inits
     init(apiManager: APIManager = APIManager()) {
@@ -26,10 +27,14 @@ class MovieListViewModel {
     
     // MARK: - Functions
     func fetchMovies(with title: String) {
-        self.apiManager.fetchMovies(with: title) { (status, movies) in
-            DispatchQueue.main.async {
+        self.apiManager.fetchMovies(with: title) { (success, movies) in
+            if success {
                 self.movies = movies
                 self.reloadTableViewClosure?()
+            } else {
+                self.movies = movies
+                self.reloadTableViewClosure?()
+                self.showErrorAlert?()
             }
         }
     }

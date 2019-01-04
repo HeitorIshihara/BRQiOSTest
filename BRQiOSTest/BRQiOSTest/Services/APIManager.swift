@@ -20,9 +20,14 @@ class APIManager {
                 if let data = response.result.value {
                     
                     let decoder = JSONDecoder()
-                    let apiResponse = try! decoder.decode(MovieAPIResponse.self, from: data)
                     
-                    complete(true, apiResponse.movies)
+                    do {
+                        let apiResponse = try decoder.decode(MovieAPIResponse.self, from: data)
+                        complete(true, apiResponse.movies)
+                    } catch {
+                        print(error)
+                        complete(false, [])
+                    }                    
                 }
                 
             case .failure(let error):
