@@ -15,7 +15,9 @@ class MovieListViewController: UIViewController {
     @IBOutlet weak var moviesTableView: UITableView!
     
     //MARK: - Properties
-    
+    lazy var viewModel: MovieListViewModel = {
+        return MovieListViewModel()
+    }()
 
     //MARK: - Life Cycle Functions
     override func viewDidLoad() {
@@ -27,6 +29,9 @@ class MovieListViewController: UIViewController {
     }
     
     //MARK: - Functions
+    func initViewModel() {
+        
+    }
 }
 
 extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {

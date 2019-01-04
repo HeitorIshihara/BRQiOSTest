@@ -8,6 +8,18 @@
 
 import Foundation
 
-class MovieListViewModal {
+class MovieListViewModel {
+    // MARK: - Properties
+    let apiManager: APIManager
+
+    // MARK: - Closure Bindings
+    var reloadTableViewClosure: (()->())?
+    
+    // MARK: - Inits
+    init(apiManager: APIManager = APIManager()) {
+        self.apiManager = apiManager
+    }
+    
+    // MARK: - Functions
     
 }
