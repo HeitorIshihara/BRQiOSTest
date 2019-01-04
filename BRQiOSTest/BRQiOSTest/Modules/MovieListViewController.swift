@@ -22,6 +22,8 @@ class MovieListViewController: UIViewController {
     //MARK: - Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initViewModel()
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,7 +32,11 @@ class MovieListViewController: UIViewController {
     
     //MARK: - Functions
     func initViewModel() {
-        
+        self.viewModel.reloadTableViewClosure = {
+            DispatchQueue.main.async {
+                self.moviesTableView.reloadData()
+            }
+        }
     }
 }
 
