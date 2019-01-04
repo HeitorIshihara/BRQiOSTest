@@ -17,6 +17,7 @@
 		421EDDFD21DFB7970013F82A /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDDFC21DFB7970013F82A /* MovieListViewModel.swift */; };
 		421EDE0021DFB9BF0013F82A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDDFF21DFB9BF0013F82A /* Movie.swift */; };
 		421EDE0321DFBAFF0013F82A /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDE0221DFBAFF0013F82A /* APIManager.swift */; };
+		421EDE0521DFBDCE0013F82A /* MovieAPIResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDE0421DFBDCE0013F82A /* MovieAPIResponse.swift */; };
 		83532CE1B52D7960B9865271 /* Pods_BRQiOSTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83198F77A01C54B49662158D /* Pods_BRQiOSTestUITests.framework */; };
 		9622BD5674FCB21B3BB518F0 /* Pods_BRQiOSTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9C9A6529646869FC332F9 /* Pods_BRQiOSTestTests.framework */; };
 		FA33827CB6680FFCB67DD428 /* Pods_BRQiOSTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379665966E12B792E0AD627F /* Pods_BRQiOSTest.framework */; };
@@ -58,6 +59,7 @@
 		421EDDFC21DFB7970013F82A /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		421EDDFF21DFB9BF0013F82A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		421EDE0221DFBAFF0013F82A /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		421EDE0421DFBDCE0013F82A /* MovieAPIResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieAPIResponse.swift; sourceTree = "<group>"; };
 		530422A072C07116E52A4747 /* Pods-BRQiOSTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BRQiOSTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BRQiOSTest/Pods-BRQiOSTest.debug.xcconfig"; sourceTree = "<group>"; };
 		83198F77A01C54B49662158D /* Pods_BRQiOSTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BRQiOSTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44F6F03532B644E4BFF991D /* Pods-BRQiOSTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BRQiOSTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BRQiOSTestTests/Pods-BRQiOSTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				421EDDFF21DFB9BF0013F82A /* Movie.swift */,
+				421EDE0421DFBDCE0013F82A /* MovieAPIResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -334,15 +337,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-BRQiOSTest/Pods-BRQiOSTest-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 			);
@@ -356,15 +355,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BRQiOSTest-checkManifestLockResult.txt",
 			);
@@ -378,15 +373,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BRQiOSTestTests-checkManifestLockResult.txt",
 			);
@@ -400,15 +391,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-BRQiOSTestUITests-checkManifestLockResult.txt",
 			);
@@ -424,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421EDE0521DFBDCE0013F82A /* MovieAPIResponse.swift in Sources */,
 				421EDDCA21DFB5820013F82A /* AppDelegate.swift in Sources */,
 				421EDE0321DFBAFF0013F82A /* APIManager.swift in Sources */,
 				421EDDFD21DFB7970013F82A /* MovieListViewModel.swift in Sources */,

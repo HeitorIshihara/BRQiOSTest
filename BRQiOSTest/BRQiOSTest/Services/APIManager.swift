@@ -7,9 +7,27 @@
 //
 
 import Foundation
+import Alamofire
 
 class APIManager {
+    
+    let searchMoviesURL = "https://www.omdbapi.com/?apikey=5351c88c&s="
+    
     func fetchMovies(with title: String, complete: @escaping ( _ success: Bool, _ movies: [Movie])->()) {
-        
+        Alamofire.request(searchMoviesURL + title).validate().responseData { response in
+            switch response.result {
+            case .success:
+                if let data = response.result.value {
+                    
+                    let decoder = JSONDecoder()
+                    let apiResponse = try! decoder.decode(MovieAPIResponse.self, from: data)
+                    
+                    complete(true, apiResponse.movies)
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
 }

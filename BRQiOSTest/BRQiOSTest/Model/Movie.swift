@@ -17,7 +17,7 @@ class Movie: Decodable {
     // MARK: - Decodable Keys
     enum MovieCodingKey: String, CodingKey {
         case id = "imdbID"
-        case title
+        case title = "Title"
     }
     
     // MARK - Inits
