@@ -18,7 +18,7 @@ class MovieDetailViewModel {
     var showMovieInfo: (() -> ())?
     
     // MARK: - Inits
-    init(apiManager: APIManager = APIManager(), movie: Movie) {
+    init(apiManager: APIManagerProtocol = APIManager(), movie: Movie) {
         self.apiManager = apiManager
         self.movie = movie
     }

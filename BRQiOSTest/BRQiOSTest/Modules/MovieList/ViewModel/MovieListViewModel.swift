@@ -22,7 +22,7 @@ class MovieListViewModel {
     var showErrorAlert: (() -> ())?
     
     // MARK: - Inits
-    init(apiManager: APIManager = APIManager()) {
+    init(apiManager: APIManagerProtocol = APIManager()) {
         self.apiManager = apiManager
     }
     
