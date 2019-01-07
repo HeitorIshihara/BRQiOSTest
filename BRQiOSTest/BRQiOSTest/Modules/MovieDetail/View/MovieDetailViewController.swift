@@ -41,10 +41,10 @@ class MovieDetailViewController: UIViewController {
                 if let movieDetail = self?.viewModel.movieDetail {
                     self?.title = movieDetail.title
                     self?.posterImage.sd_setImage(with: movieDetail.posterImageURL, completed: nil)
-                    self?.releaseDate.text = movieDetail.releaseDate
-                    self?.genreLabel.text = movieDetail.genre
-                    self?.directorLabel.text = movieDetail.director
-                    self?.actorsLabel.text = movieDetail.actors
+                    self?.releaseDate.text?.append(movieDetail.releaseDate)
+                    self?.genreLabel.text?.append(movieDetail.genre)
+                    self?.directorLabel.text?.append(movieDetail.director)
+                    self?.actorsLabel.text?.append(movieDetail.actors)
                 }
             }
         }
