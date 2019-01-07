@@ -33,6 +33,14 @@ class MovieListViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? MovieDetailViewController,
+            let photo = viewModel.selectedPhoto {
+            vc.imageUrl = photo.image_url
+        }
+    }
+    
     //MARK: - Functions
     func initViewModel() {
         // Reload Table View
