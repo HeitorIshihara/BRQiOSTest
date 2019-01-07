@@ -7,6 +7,7 @@ target 'BRQiOSTest' do
 
   # Pods for BRQiOSTest
   pod 'Alamofire'
+  pod 'SDWebImage'
 
   target 'BRQiOSTestTests' do
     inherit! :search_paths
