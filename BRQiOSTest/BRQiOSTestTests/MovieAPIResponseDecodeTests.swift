@@ -9,7 +9,7 @@
 import XCTest
 @testable import BRQiOSTest
 
-class DecodeTests: XCTestCase {
+class MovieAPIResponseDecodeTests: XCTestCase {
     
     var path: String = String()
     var data = Data()
@@ -35,18 +35,18 @@ class DecodeTests: XCTestCase {
         super.tearDown()
     }
     
-    func testMovieAPIResponseDecoderCount() throws {
+    func testMovieAPIResponseDecoderCount() {
         XCTAssertEqual(apiResponse?.movies.count, 10)
     }
     
-    func testMovieAPIResponseDecoderFirst() throws {
+    func testMovieAPIResponseDecoderFirst() {
         let firstMovie = Movie(id: "tt0800369", title: "Thor")
         if let apiResponseFirstMovie = apiResponse?.movies.first {
             XCTAssertEqual(apiResponseFirstMovie.id, firstMovie.id)
         }
     }
     
-    func testMovieAPIResponseDecoderLast() throws {
+    func testMovieAPIResponseDecoderLast() {
         let lastMovie = Movie(id: "tt1922373", title: "Thor & Loki: Blood Brothers")
         if let apiResponseLastMovie = apiResponse?.movies.last {
             XCTAssertEqual(apiResponseLastMovie.id, lastMovie.id)

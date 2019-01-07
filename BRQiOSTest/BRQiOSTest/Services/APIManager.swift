@@ -66,13 +66,13 @@ class APIManager: APIManagerProtocol {
             switch response.result {
             case .success:
                 if let data = response.result.value {
-                    
                     let decoder = JSONDecoder()
                     
                     // Thats necessary because the api returns code 200 even if it fails
                     // so the Alomofire.validate() wont catch it as an error
                     do {
                         let movieDetail = try decoder.decode(MovieDetail.self, from: data)
+                        print(movieDetail.posterImageURL)
                         complete(true, movieDetail)
                     } catch {
                         print(error)
