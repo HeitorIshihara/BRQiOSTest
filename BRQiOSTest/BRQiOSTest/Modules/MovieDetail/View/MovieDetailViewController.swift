@@ -39,6 +39,7 @@ class MovieDetailViewController: UIViewController {
         self.viewModel.showMovieInfo = { [weak self]() in
             DispatchQueue.main.async {
                 if let movieDetail = self?.viewModel.movieDetail {
+                    self?.title = movieDetail.title
                     self?.posterImage.sd_setImage(with: movieDetail.posterImageURL, completed: nil)
                     self?.releaseDate.text = movieDetail.releaseDate
                     self?.genreLabel.text = movieDetail.genre
