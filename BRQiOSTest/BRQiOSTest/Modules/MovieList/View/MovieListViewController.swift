@@ -35,9 +35,9 @@ class MovieListViewController: UIViewController {
     
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let vc = segue.destination as? MovieDetailViewController,
-            let photo = viewModel.selectedPhoto {
-            vc.imageUrl = photo.image_url
+        if let movieDetailViewController = segue.destination as? MovieDetailViewController,
+            let movieDetailViewModel = self.viewModel.createMovieDetailViewModel() {
+            movieDetailViewController.viewModel = movieDetailViewModel
         }
     }
     
@@ -93,6 +93,11 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 45
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        self.viewModel.movieSelected(at: indexPath)
+        return indexPath
     }
 }
 

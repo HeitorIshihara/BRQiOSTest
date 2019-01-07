@@ -15,6 +15,7 @@ class MovieListViewModel {
     var numberOfCells: Int {
         return self.movies.count
     }
+    var movieSelected: Movie?
     
     // MARK: - Closure Bindings
     var reloadTableViewClosure: (() -> ())?
@@ -43,4 +44,15 @@ class MovieListViewModel {
         return self.movies[indexPath.row]
     }
     
+    func movieSelected(at indexPath: IndexPath) {
+        self.movieSelected = self.movies[indexPath.row]
+    }
+    
+    func createMovieDetailViewModel() -> MovieDetailViewModel? {
+        if let movie = self.movieSelected {
+            return MovieDetailViewModel(movie: movie)
+        } else {
+            return nil            
+        }
+    }
 }

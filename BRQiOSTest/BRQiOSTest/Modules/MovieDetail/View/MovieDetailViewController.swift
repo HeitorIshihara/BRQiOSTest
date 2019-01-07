@@ -10,11 +10,20 @@ import UIKit
 
 class MovieDetailViewController: UIViewController {
 
+    // MARK: - Outlets and Actions
+    
+    // MARK: - Properties
+    var viewModel: MovieDetailViewModel!
+    
+    // MARK: - Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(viewModel.movie.title)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
+    
+    // MARK: - Functions
 }

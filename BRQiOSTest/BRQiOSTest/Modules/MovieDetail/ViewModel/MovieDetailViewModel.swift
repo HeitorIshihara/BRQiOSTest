@@ -10,11 +10,16 @@ import Foundation
 
 class MovieDetailViewModel {
     // MARK: - Properties
+    var movie: Movie
     
     // MARK: - Closure Bindings
     
     // MARK: - Inits
+    init(movie: Movie) {
+        self.movie = movie
+    }
     
     // MARK: - Functions
-    
+
 }
+
