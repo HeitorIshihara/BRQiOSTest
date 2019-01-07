@@ -36,18 +36,18 @@ class MovieListViewController: UIViewController {
     //MARK: - Functions
     func initViewModel() {
         // Reload Table View
-        self.viewModel.reloadTableViewClosure = {
+        self.viewModel.reloadTableViewClosure = { [weak self]() in
             DispatchQueue.main.async {
-                self.moviesTableView.reloadData()
+                self?.moviesTableView.reloadData()
             }
         }
         
         // Show Error Alert
-        self.viewModel.showErrorAlert = {
+        self.viewModel.showErrorAlert = { [weak self]() in
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: "Error", message: "Something went wrong! =( Give it another try!", preferredStyle: UIAlertControllerStyle.alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-                self.present(alert, animated: true, completion: nil)
+                self?.present(alert, animated: true, completion: nil)
             }
         }
     }
