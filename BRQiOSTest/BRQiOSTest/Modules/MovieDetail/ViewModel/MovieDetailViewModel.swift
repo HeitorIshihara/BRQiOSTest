@@ -13,6 +13,7 @@ class MovieDetailViewModel {
     var movie: Movie
     
     // MARK: - Closure Bindings
+    var showMovieInfo: (() -> ())?
     
     // MARK: - Inits
     init(movie: Movie) {

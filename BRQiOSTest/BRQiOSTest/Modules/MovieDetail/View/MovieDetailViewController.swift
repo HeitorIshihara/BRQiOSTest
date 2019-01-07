@@ -11,6 +11,11 @@ import UIKit
 class MovieDetailViewController: UIViewController {
 
     // MARK: - Outlets and Actions
+    @IBOutlet weak var posterImage: UIImageView!
+    @IBOutlet weak var releasedYearLabel: UILabel!
+    @IBOutlet weak var genreLabel: UILabel!
+    @IBOutlet weak var directorLabel: UILabel!
+    @IBOutlet weak var actorsLabel: UILabel!
     
     // MARK: - Properties
     var viewModel: MovieDetailViewModel!
@@ -18,7 +23,6 @@ class MovieDetailViewController: UIViewController {
     // MARK: - Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(viewModel.movie.title)
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,4 +30,12 @@ class MovieDetailViewController: UIViewController {
     }
     
     // MARK: - Functions
+    func initViewModel() {
+        // Show Movie Info
+        self.viewModel.showMovieInfo = { [weak self]() in
+            DispatchQueue.main.async {
+                
+            }
+        }
+    }
 }
