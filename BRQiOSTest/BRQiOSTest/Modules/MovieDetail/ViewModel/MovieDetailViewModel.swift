@@ -10,17 +10,27 @@ import Foundation
 
 class MovieDetailViewModel {
     // MARK: - Properties
+    var apiManager: APIManager
     var movie: Movie
+    var movieDetail: MovieDetail?
     
     // MARK: - Closure Bindings
     var showMovieInfo: (() -> ())?
     
     // MARK: - Inits
-    init(movie: Movie) {
+    init(apiManager: APIManager = APIManager(), movie: Movie) {
+        self.apiManager = apiManager
         self.movie = movie
     }
     
     // MARK: - Functions
-
+    func fetchMovieDetails() {
+        self.apiManager.fetchMovieDetail(with: self.movie.id) { (success, movieDetail) in
+            if success {
+                self.movieDetail = movieDetail
+                self.showMovieInfo?()
+            }
+        }
+    }
 }
 

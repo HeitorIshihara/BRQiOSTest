@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import SDWebImage
 
-class MovieDetail {
+class MovieDetail: Decodable {
     // MARK: - Properties
     let posterImageURL: URL
     let title: String

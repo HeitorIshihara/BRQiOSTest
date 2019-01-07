@@ -135,7 +135,7 @@
                         <outlet property="directorLabel" destination="Z6F-OA-HOl" id="hq8-5e-bky"/>
                         <outlet property="genreLabel" destination="bXc-Bm-iwS" id="5Hr-PX-8gc"/>
                         <outlet property="posterImage" destination="Xkq-JL-n5A" id="mm9-gO-jR8"/>
-                        <outlet property="releasedYearLabel" destination="T6K-bj-gsz" id="ZXX-e5-qRG"/>
+                        <outlet property="releaseDate" destination="T6K-bj-gsz" id="ZXX-e5-qRG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F13-08-huE" userLabel="First Responder" sceneMemberID="firstResponder"/>

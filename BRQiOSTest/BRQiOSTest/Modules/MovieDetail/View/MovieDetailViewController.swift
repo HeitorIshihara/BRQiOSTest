@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MovieDetailViewController: UIViewController {
 
     // MARK: - Outlets and Actions
     @IBOutlet weak var posterImage: UIImageView!
-    @IBOutlet weak var releasedYearLabel: UILabel!
+    @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
     @IBOutlet weak var directorLabel: UILabel!
     @IBOutlet weak var actorsLabel: UILabel!
@@ -23,6 +24,9 @@ class MovieDetailViewController: UIViewController {
     // MARK: - Life Cycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.initViewModel()
+        self.viewModel.fetchMovieDetails()
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +38,13 @@ class MovieDetailViewController: UIViewController {
         // Show Movie Info
         self.viewModel.showMovieInfo = { [weak self]() in
             DispatchQueue.main.async {
-                
+                if let movieDetail = self?.viewModel.movieDetail {
+                    self?.posterImage.sd_setImage(with: movieDetail.posterImageURL, completed: nil)
+                    self?.releaseDate.text = movieDetail.releaseDate
+                    self?.genreLabel.text = movieDetail.genre
+                    self?.directorLabel.text = movieDetail.director
+                    self?.actorsLabel.text = movieDetail.actors
+                }
             }
         }
     }
