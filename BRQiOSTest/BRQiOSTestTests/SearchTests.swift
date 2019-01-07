@@ -9,7 +9,7 @@
 import XCTest
 @testable import BRQiOSTest
 
-class BRQiOSTestTests: XCTestCase {
+class SearchTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -21,16 +21,12 @@ class BRQiOSTestTests: XCTestCase {
         super.tearDown()
     }
     
-    func testMovieDetailScreenInformations() {
-        let movieDetailViewController = MovieDetailViewController()
-        let movie = Movie(id: "tt0800369", title: "Thor")
-        let movieDetailViewModel = MovieDetailViewModel(apiManager: APIManagerTester(), movie: movie)
-        movieDetailViewController.viewModel = movieDetailViewModel
-        movieDetailViewController.initViewModel()
-        movieDetailViewController.viewModel.fetchMovieDetails()
-        movieDetailViewModel.showMovieInfo?()
+    func testSearchURL() {
+        let apiManager = APIManager()
+        let finalURL = URL(string: "https://www.omdbapi.com/?apikey=5351c88c&s=Thor")
         
-        XCTAssertEqual(movieDetailViewController.title, "Thor")
+        let generatedURL = apiManager.urlGenerator(type: .searchMovie, param: "Thor")
         
+        XCTAssertEqual(finalURL, generatedURL)
     }
 }

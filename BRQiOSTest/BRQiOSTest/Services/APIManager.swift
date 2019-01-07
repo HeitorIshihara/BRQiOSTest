@@ -14,13 +14,29 @@ protocol APIManagerProtocol {
     func fetchMovieDetail(with id: String, complete: @escaping ( _ success: Bool, _ movies: MovieDetail)->())
 }
 
+enum URLType: String {
+    case searchMovie = "s="
+    case movieDetail = "i="
+}
+
 class APIManager: APIManagerProtocol {
     
-    let searchMoviesURL = "https://www.omdbapi.com/?apikey=5351c88c&s="
-    let movieDetailURL = "https://www.omdbapi.com/?apikey=5351c88c&i="
+    let apiURL = "https://www.omdbapi.com/?apikey=5351c88c&"
+
+    func urlGenerator(type: URLType, param: String) -> URL? {
+        let urlString: String = apiURL + type.rawValue + param
+        
+        if let url = URL(string: urlString) {
+            return url
+        } else {
+            print("URL cant be empty")
+            return nil
+        }
+    }
     
     func fetchMovies(with title: String, complete: @escaping ( _ success: Bool, _ movies: [Movie])->()) {
-        Alamofire.request(searchMoviesURL + title).validate().responseData { response in
+        guard let url = urlGenerator(type: .searchMovie, param: title) else { return }
+        Alamofire.request(url).validate().responseData { response in
             switch response.result {
             case .success:
                 if let data = response.result.value {
@@ -45,7 +61,8 @@ class APIManager: APIManagerProtocol {
     }
     
     func fetchMovieDetail(with id: String, complete: @escaping ( _ success: Bool, _ movies: MovieDetail)->()) {
-        Alamofire.request(movieDetailURL + id).validate().responseData { response in
+        guard let url = urlGenerator(type: .movieDetail, param: id) else { return }
+        Alamofire.request(url).validate().responseData { response in
             switch response.result {
             case .success:
                 if let data = response.result.value {
