@@ -9,7 +9,12 @@
 import Foundation
 import Alamofire
 
-class APIManager {
+protocol APIManagerProtocol {
+    func fetchMovies(with title: String, complete: @escaping ( _ success: Bool, _ movies: [Movie])->())
+    func fetchMovieDetail(with id: String, complete: @escaping ( _ success: Bool, _ movies: MovieDetail)->())
+}
+
+class APIManager: APIManagerProtocol {
     
     let searchMoviesURL = "https://www.omdbapi.com/?apikey=5351c88c&s="
     let movieDetailURL = "https://www.omdbapi.com/?apikey=5351c88c&i="

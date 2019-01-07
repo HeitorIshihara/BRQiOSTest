@@ -10,7 +10,7 @@ import Foundation
 
 class MovieDetailViewModel {
     // MARK: - Properties
-    var apiManager: APIManager
+    var apiManager: APIManagerProtocol
     var movie: Movie
     var movieDetail: MovieDetail?
     

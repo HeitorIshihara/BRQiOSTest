@@ -10,7 +10,7 @@ import Foundation
 
 class MovieListViewModel {
     // MARK: - Properties
-    let apiManager: APIManager
+    let apiManager: APIManagerProtocol
     var movies: [Movie] = [Movie]()
     var numberOfCells: Int {
         return self.movies.count
