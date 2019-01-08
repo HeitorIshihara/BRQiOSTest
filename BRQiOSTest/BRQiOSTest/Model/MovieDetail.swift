@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MovieDetail: Decodable {
+class MovieDetail: Decodable, Equatable {
     // MARK: - Properties
     let posterImageURL: URL
     let title: String
@@ -48,5 +48,15 @@ class MovieDetail: Decodable {
         let actors: String = try container.decode(String.self, forKey: .actors)
 
         self.init(posterImageURL: posterImageURL, title: title, releaseDate: releaseDate, genre: genre, director: director, actors: actors)
+    }
+    
+    // MARK: - Equatable
+    static func ==(lhs: MovieDetail, rhs: MovieDetail) -> Bool {
+        return lhs.posterImageURL == rhs.posterImageURL &&
+        lhs.title == rhs.title &&
+        lhs.releaseDate == rhs.releaseDate &&
+        lhs.genre == rhs.genre &&
+        lhs.director == rhs.director &&
+        lhs.actors == rhs.actors
     }
 }
