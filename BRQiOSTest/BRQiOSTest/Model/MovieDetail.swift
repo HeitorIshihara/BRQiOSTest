@@ -51,7 +51,8 @@ class MovieDetail: Decodable, Equatable {
     }
     
     // MARK: - Equatable
-    static func ==(lhs: MovieDetail, rhs: MovieDetail) -> Bool {        return lhs.posterImageURL == rhs.posterImageURL &&
+    static func ==(lhs: MovieDetail, rhs: MovieDetail) -> Bool {
+        return lhs.posterImageURL == rhs.posterImageURL &&
         lhs.title == rhs.title &&
         lhs.releaseDate == rhs.releaseDate &&
         lhs.genre == rhs.genre &&

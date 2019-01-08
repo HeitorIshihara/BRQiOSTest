@@ -46,9 +46,6 @@ class MovieDetailScreenUITests: FBSnapshotTestCase {
             movieDetailViewController.setActivityIndicator(to: false)
         }
 
-        
-        
-        
         FBSnapshotVerifyView(movieDetailViewController.view)
     }
     
