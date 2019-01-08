@@ -12,6 +12,7 @@ import SDWebImage
 class MovieDetailViewController: UIViewController {
 
     // MARK: - Outlets and Actions
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
@@ -26,6 +27,8 @@ class MovieDetailViewController: UIViewController {
         super.viewDidLoad()
         
         self.initViewModel()
+        
+        self.setActivityIndicator(to: true)
         self.viewModel.fetchMovieDetails()
     }
 
@@ -51,8 +54,20 @@ class MovieDetailViewController: UIViewController {
                     self?.genreLabel.isHidden = false
                     self?.directorLabel.isHidden = false
                     self?.actorsLabel.isHidden = false
+                    
+                    self?.setActivityIndicator(to: false)
                 }
             }
+        }
+    }
+    
+    func setActivityIndicator(to active: Bool) {
+        if active {
+            self.activityIndicator.startAnimating()
+            self.activityIndicator.isHidden = false
+        } else {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
         }
     }
 }
