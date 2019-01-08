@@ -99,6 +99,10 @@ extension MovieListViewController: UITableViewDelegate, UITableViewDataSource {
         self.viewModel.movieSelected(at: indexPath)
         return indexPath
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.moviesTableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
 extension MovieListViewController: UISearchBarDelegate {
