@@ -22,8 +22,29 @@ class SearchScreenUITests: FBSnapshotTestCase {
         super.tearDown()
     }
     
-    func testUI() {
+    func testEmptyTableViewUI() {
         let viewController: UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieList")
+        
+        
+        FBSnapshotVerifyView(viewController.view)
+    }
+    
+    func testFilledTableViewUI() {
+        
+        let viewController: MovieListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieList") as! MovieListViewController
+        
+        do {
+            let path = Bundle.main.path(forResource: "SearchMovies", ofType: "json")!
+            let data = try! Data(contentsOf: URL(fileURLWithPath: path))
+            
+            let decoder = JSONDecoder()
+            let apiResponse = try decoder.decode(MovieAPIResponse.self, from: data)
+            
+            viewController.viewModel.movies = apiResponse.movies
+            viewController.viewModel.reloadTableViewClosure?()
+        } catch {
+            return
+        }
         FBSnapshotVerifyView(viewController.view)
     }
 
