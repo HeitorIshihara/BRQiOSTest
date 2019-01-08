@@ -99,28 +99,28 @@
                                 <rect key="frame" x="177" y="323.5" width="20" height="20"/>
                             </activityIndicatorView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cvn-hX-Ccb">
-                                <rect key="frame" x="0.0" y="497.5" width="375" height="169.5"/>
+                                <rect key="frame" x="0.0" y="531" width="375" height="136"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release date: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6K-bj-gsz">
-                                        <rect key="frame" x="16" y="0.0" width="343" height="41"/>
+                                        <rect key="frame" x="16" y="0.0" width="343" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genre: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXc-Bm-iwS">
-                                        <rect key="frame" x="16" y="41" width="343" height="40"/>
+                                        <rect key="frame" x="16" y="33" width="343" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Director: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z6F-OA-HOl">
-                                        <rect key="frame" x="16" y="81" width="343" height="40.5"/>
+                                        <rect key="frame" x="16" y="65" width="343" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Actors: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="em0-VP-hLD">
-                                        <rect key="frame" x="16" y="121.5" width="343" height="40.5"/>
+                                        <rect key="frame" x="16" y="97.5" width="343" height="32.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -147,7 +147,7 @@
                                 </constraints>
                             </view>
                             <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Xkq-JL-n5A">
-                                <rect key="frame" x="0.0" y="64" width="375" height="433.5"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="467"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -162,7 +162,7 @@
                             <constraint firstItem="0fk-PP-E3U" firstAttribute="centerX" secondItem="WLj-XS-ape" secondAttribute="centerX" id="bQK-i5-ZWO"/>
                             <constraint firstItem="Xkq-JL-n5A" firstAttribute="top" secondItem="ALQ-VH-43Y" secondAttribute="top" id="bfh-iT-tU1"/>
                             <constraint firstAttribute="bottom" secondItem="Cvn-hX-Ccb" secondAttribute="bottom" id="bhu-NG-J13"/>
-                            <constraint firstItem="Xkq-JL-n5A" firstAttribute="height" secondItem="WLj-XS-ape" secondAttribute="height" multiplier="0.65" id="oGr-ob-1uG"/>
+                            <constraint firstItem="Xkq-JL-n5A" firstAttribute="height" secondItem="WLj-XS-ape" secondAttribute="height" multiplier="0.7" id="oGr-ob-1uG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ALQ-VH-43Y"/>
                     </view>

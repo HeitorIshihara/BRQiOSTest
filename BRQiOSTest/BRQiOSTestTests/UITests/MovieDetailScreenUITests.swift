@@ -28,7 +28,8 @@ class MovieDetailScreenUITests: FBSnapshotTestCase {
         movieDetailViewController.viewModel = MovieDetailViewModel(movie: Movie(id: "tt0800369", title: "Thor"))
         guard let url = URL(string: "https://m.media-amazon.com/images/M/MV5BOGE4NzU1YTAtNzA3Mi00ZTA2LTg2YmYtMDJmMThiMjlkYjg2XkEyXkFqcGdeQXVyNTgzMDMzMTg@._V1_SX300.jpg") else { return }
         movieDetailViewController.viewModel.movieDetail = MovieDetail(posterImageURL: url, title: "Thor", releaseDate: "06 May 2011", genre: "Action, Adventure, Fantasy, Sci-Fi", director: "Kenneth Branagh", actors: "Chris Hemsworth, Natalie Portman, Tom Hiddleston, Anthony Hopkins")
-        _ = movieDetailViewController.view
+//        _ = movieDetailViewController.view
+        movieDetailViewController.loadViewIfNeeded()
         if let movieDetail = movieDetailViewController.viewModel.movieDetail {
             movieDetailViewController.title = movieDetail.title
             movieDetailViewController.posterImage.sd_setImage(with: movieDetail.posterImageURL, placeholderImage: UIImage(named: "unavailable-image"), options: SDWebImageOptions(), completed: nil)
