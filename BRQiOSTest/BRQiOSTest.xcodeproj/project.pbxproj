@@ -29,6 +29,7 @@
 		421EDE2021E3DFA50013F82A /* MovieDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 421EDE1F21E3DFA50013F82A /* MovieDetail.json */; };
 		421EDE2121E3DFC80013F82A /* MovieDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = 421EDE1F21E3DFA50013F82A /* MovieDetail.json */; };
 		421EDE2521E4D7F10013F82A /* SearchScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDE2321E4D5710013F82A /* SearchScreenUITests.swift */; };
+		421EDE2921E4D9CE0013F82A /* MovieDetailScreenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDE2821E4D9CE0013F82A /* MovieDetailScreenUITests.swift */; };
 		83532CE1B52D7960B9865271 /* Pods_BRQiOSTestUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83198F77A01C54B49662158D /* Pods_BRQiOSTestUITests.framework */; };
 		9622BD5674FCB21B3BB518F0 /* Pods_BRQiOSTestTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BC9C9A6529646869FC332F9 /* Pods_BRQiOSTestTests.framework */; };
 		FA33827CB6680FFCB67DD428 /* Pods_BRQiOSTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 379665966E12B792E0AD627F /* Pods_BRQiOSTest.framework */; };
@@ -80,6 +81,7 @@
 		421EDE1D21E3DF570013F82A /* MovieDetailDecodeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailDecodeTests.swift; sourceTree = "<group>"; };
 		421EDE1F21E3DFA50013F82A /* MovieDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MovieDetail.json; sourceTree = "<group>"; };
 		421EDE2321E4D5710013F82A /* SearchScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchScreenUITests.swift; sourceTree = "<group>"; };
+		421EDE2821E4D9CE0013F82A /* MovieDetailScreenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailScreenUITests.swift; sourceTree = "<group>"; };
 		530422A072C07116E52A4747 /* Pods-BRQiOSTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BRQiOSTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BRQiOSTest/Pods-BRQiOSTest.debug.xcconfig"; sourceTree = "<group>"; };
 		83198F77A01C54B49662158D /* Pods_BRQiOSTestUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BRQiOSTestUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B44F6F03532B644E4BFF991D /* Pods-BRQiOSTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BRQiOSTestTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BRQiOSTestTests/Pods-BRQiOSTestTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -171,8 +173,8 @@
 			isa = PBXGroup;
 			children = (
 				421EDE2221E4D4D00013F82A /* MockAPIResponses */,
-				421EDE2721E4D9380013F82A /* UITests */,
 				421EDE2621E4D8D90013F82A /* Unit Tests */,
+				421EDE2721E4D9380013F82A /* UITests */,
 				421EDDE021DFB5840013F82A /* Info.plist */,
 			);
 			path = BRQiOSTestTests;
@@ -288,6 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				421EDE2321E4D5710013F82A /* SearchScreenUITests.swift */,
+				421EDE2821E4D9CE0013F82A /* MovieDetailScreenUITests.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -537,6 +540,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				421EDE2921E4D9CE0013F82A /* MovieDetailScreenUITests.swift in Sources */,
 				421EDE1721E3C2490013F82A /* SearchTests.swift in Sources */,
 				421EDE1E21E3DF570013F82A /* MovieDetailDecodeTests.swift in Sources */,
 				421EDE1921E3D2110013F82A /* MovieAPIResponseDecodeTests.swift in Sources */,
