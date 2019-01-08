@@ -15,7 +15,7 @@
         <!--Movies-->
         <scene sceneID="Y0a-nh-OGD">
             <objects>
-                <viewController id="cYC-U3-GhE" customClass="MovieListViewController" customModule="BRQiOSTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MovieList" id="cYC-U3-GhE" customClass="MovieListViewController" customModule="BRQiOSTest" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aNH-7H-gTe">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
