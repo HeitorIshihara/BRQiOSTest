@@ -40,11 +40,17 @@ class MovieDetailViewController: UIViewController {
             DispatchQueue.main.async {
                 if let movieDetail = self?.viewModel.movieDetail {
                     self?.title = movieDetail.title
-                    self?.posterImage.sd_setImage(with: movieDetail.posterImageURL, completed: nil)
+                    self?.posterImage.sd_setImage(with: movieDetail.posterImageURL, placeholderImage: UIImage(named: "unavailable-image"), options: SDWebImageOptions(), completed: nil)
                     self?.releaseDate.text?.append(movieDetail.releaseDate)
                     self?.genreLabel.text?.append(movieDetail.genre)
                     self?.directorLabel.text?.append(movieDetail.director)
                     self?.actorsLabel.text?.append(movieDetail.actors)
+                    
+                    self?.posterImage.isHidden = false
+                    self?.releaseDate.isHidden = false
+                    self?.genreLabel.isHidden = false
+                    self?.directorLabel.isHidden = false
+                    self?.actorsLabel.isHidden = false
                 }
             }
         }
