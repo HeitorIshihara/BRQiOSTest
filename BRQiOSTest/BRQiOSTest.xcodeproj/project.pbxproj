@@ -11,7 +11,6 @@
 		421EDDCF21DFB5820013F82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421EDDCD21DFB5820013F82A /* Main.storyboard */; };
 		421EDDD121DFB5840013F82A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 421EDDD021DFB5840013F82A /* Assets.xcassets */; };
 		421EDDD421DFB5840013F82A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 421EDDD221DFB5840013F82A /* LaunchScreen.storyboard */; };
-		421EDDEA21DFB5840013F82A /* BRQiOSTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDDE921DFB5840013F82A /* BRQiOSTestUITests.swift */; };
 		421EDDFB21DFB76C0013F82A /* MovieListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDDFA21DFB76C0013F82A /* MovieListViewController.swift */; };
 		421EDDFD21DFB7970013F82A /* MovieListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDDFC21DFB7970013F82A /* MovieListViewModel.swift */; };
 		421EDE0021DFB9BF0013F82A /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421EDDFF21DFB9BF0013F82A /* Movie.swift */; };
@@ -64,8 +63,6 @@
 		421EDDDA21DFB5840013F82A /* BRQiOSTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BRQiOSTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		421EDDE021DFB5840013F82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		421EDDE521DFB5840013F82A /* BRQiOSTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BRQiOSTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		421EDDE921DFB5840013F82A /* BRQiOSTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BRQiOSTestUITests.swift; sourceTree = "<group>"; };
-		421EDDEB21DFB5840013F82A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		421EDDFA21DFB76C0013F82A /* MovieListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewController.swift; sourceTree = "<group>"; };
 		421EDDFC21DFB7970013F82A /* MovieListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListViewModel.swift; sourceTree = "<group>"; };
 		421EDDFF21DFB9BF0013F82A /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -137,7 +134,6 @@
 			children = (
 				421EDDC821DFB5820013F82A /* BRQiOSTest */,
 				421EDDDD21DFB5840013F82A /* BRQiOSTestTests */,
-				421EDDE821DFB5840013F82A /* BRQiOSTestUITests */,
 				421EDDC721DFB5820013F82A /* Products */,
 				3DC8A792FBF23BFDD18A645A /* Pods */,
 				EF507208EBBC062D582B7BED /* Frameworks */,
@@ -178,15 +174,6 @@
 				421EDDE021DFB5840013F82A /* Info.plist */,
 			);
 			path = BRQiOSTestTests;
-			sourceTree = "<group>";
-		};
-		421EDDE821DFB5840013F82A /* BRQiOSTestUITests */ = {
-			isa = PBXGroup;
-			children = (
-				421EDDE921DFB5840013F82A /* BRQiOSTestUITests.swift */,
-				421EDDEB21DFB5840013F82A /* Info.plist */,
-			);
-			path = BRQiOSTestUITests;
 			sourceTree = "<group>";
 		};
 		421EDDF721DFB6DE0013F82A /* Modules */ = {
@@ -552,7 +539,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				421EDDEA21DFB5840013F82A /* BRQiOSTestUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
