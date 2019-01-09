@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Movie: Decodable {
+class Movie: Decodable, Equatable {
     
     // MARK: - Properties
     let id: String
@@ -33,5 +33,12 @@ class Movie: Decodable {
         let title: String = try container.decode(String.self, forKey: .title)
         
         self.init(id: id, title: title)
+    }
+    
+    // MARK: - Equatable
+    static func ==(lhs: Movie, rhs: Movie) -> Bool {
+        return lhs.id == rhs.id &&
+            lhs.title == rhs.title
+        
     }
 }
