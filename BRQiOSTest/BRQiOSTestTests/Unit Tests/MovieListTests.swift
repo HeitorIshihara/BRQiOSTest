@@ -9,7 +9,7 @@
 import XCTest
 @testable import BRQiOSTest
 
-class SearchTests: XCTestCase {
+class MovieListTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
@@ -28,6 +28,16 @@ class SearchTests: XCTestCase {
         let generatedURL = apiManager.urlGenerator(type: .searchMovie, param: "Thor")
         
         XCTAssertEqual(finalURL, generatedURL)
+    }
+    
+    func testGetMovie() {
+        let viewController: MovieListViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MovieList") as! MovieListViewController
+        viewController.viewModel.movies = [Movie(id: "t1", title: "Thor"), Movie(id: "t2", title: "Captain America"), Movie(id: "t3", title: "Iron Man")]
+        
+        let movie: Movie = viewController.viewModel.getMovie(at: IndexPath(row: 1, section: 0))
+        
+        XCTAssertEqual(Movie(id: "t2", title: "Captain America"), movie)
+        
     }
     
     
